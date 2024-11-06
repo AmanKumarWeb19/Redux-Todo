@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo, deleteTodo, removeTodo } from "../actions/index";
 
 const Todo = () => {
+  const [inputData, setInputData] = useState("");
+  console.log(inputData);
+
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="border-4 border-green-500 rounded-md p-4 w-[60%] m-auto">
@@ -19,10 +25,15 @@ const Todo = () => {
               className="border-2  rounded-md w-[70%]"
               type="text"
               placeholder="✍️   Add Items......"
+              value={inputData}
+              onChange={(event) => setInputData(event.target.value)}
             />
 
             <div className="border-4 border-green-500 rounded-md w-[10%] bg-red-300 cursor-pointer">
-              <i class="fa-solid fa-check"></i>
+              <i
+                className="fa-solid fa-check"
+                onClick={() => dispatch(addTodo(inputData))}
+              ></i>
             </div>
           </div>
         </div>
