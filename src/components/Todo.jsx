@@ -32,7 +32,7 @@ const Todo = () => {
             <div className="border-4 border-green-500 rounded-md w-[10%] bg-red-300 cursor-pointer">
               <i
                 className="fa-solid fa-check"
-                onClick={() => dispatch(addTodo(inputData))}
+                onClick={() => dispatch(addTodo(inputData), setInputData(""))}
               ></i>
             </div>
           </div>
