@@ -1,5 +1,13 @@
-export const addTodo = () => {
-  return { type: "ADD_TODO" };
+export const addTodo = (inputData) => {
+  console.log(inputData);
+
+  return {
+    type: "ADD_TODO",
+    payload: {
+      id: new Date().getTime().toString(),
+      data: inputData,
+    },
+  };
 };
 
 export const deleteTodo = () => {
