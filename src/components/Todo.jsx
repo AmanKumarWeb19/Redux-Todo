@@ -55,6 +55,15 @@ const Todo = () => {
               </div>
             ))}
           </div>
+
+          <div>
+            <button
+              className="border-2 rounded-md bg-orange-700 text-white font-bold mt-16 p-2"
+              onClick={() => dispatch(removeTodo())}
+            >
+              REMOVE ALL
+            </button>
+          </div>
         </div>
       </div>
     </div>
