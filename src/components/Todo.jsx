@@ -4,8 +4,7 @@ import { addTodo, deleteTodo, removeTodo } from "../actions/index";
 
 const Todo = () => {
   const [inputData, setInputData] = useState("");
-  console.log(inputData);
-
+  const list = useSelector((state) => state.todoReducer.list);
   const dispatch = useDispatch();
   return (
     <div>
