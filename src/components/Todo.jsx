@@ -35,6 +35,26 @@ const Todo = () => {
               ></i>
             </div>
           </div>
+
+          <div className="w-[80%] m-auto mt-10 ">
+            {list.map((elem) => (
+              <div
+                className="p-2 flex justify-between w-[85%] m-auto border-2 mt-5 mb-5"
+                key={elem.id}
+              >
+                <h3 className="border-4 border-slate-500 w-[80%] text-red-500 font-bold text-left pl-2">
+                  {elem.data}
+                </h3>
+                <div className="border-4 border-slate-500 rounded-md w-[10%] bg-red-600 cursor-pointer">
+                  <i
+                    className="fa-solid fa-trash"
+                    title="Delete Item"
+                    onClick={() => dispatch(deleteTodo(elem.id))}
+                  ></i>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
