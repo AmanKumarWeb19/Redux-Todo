@@ -10,8 +10,8 @@ export const addTodo = (inputData) => {
   };
 };
 
-export const deleteTodo = () => {
-  return { type: "DELETE_TODO" };
+export const deleteTodo = (id) => {
+  return { type: "DELETE_TODO", id };
 };
 
 export const removeTodo = () => {
