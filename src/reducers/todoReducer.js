@@ -1,3 +1,5 @@
+import { list } from "postcss";
+
 const initialData = {
   list: [],
 };
@@ -17,6 +19,7 @@ const todoReducer = (state = initialData, action) => {
           },
         ],
       };
+
     default:
       return state;
   }
